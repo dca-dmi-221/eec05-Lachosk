@@ -35,7 +35,7 @@ function buscador(indagar) {
     ];
     for (let i = 0; i < testWordsList.length; i++) {
         esta = testWordsList[i];
-        if (testTargetWordB.toLowerCase() === esta.toLowerCase()) {
+        if (testTargetWordC.toLowerCase() === esta.toLowerCase()) {
             listado = true;
         }
         return listado;
@@ -72,18 +72,26 @@ function wordLengthClassifier(wordsList) {
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
-
 let onVerificationWordA = "reconocer";
 let onVerificationWordB = "querer";
 let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-    const devolver = word.split("").reverse().join("");
-    console.log(devolver)
-    return devolver === word ? "Es palindromo" : "No es palindromo"
+  console.log(word.toLowerCase())
+  let palindromeWord = word.toLowerCase().split("").reverse().join("");
+  if (palindromeWord === word.toLowerCase()){
+      console.log("La palabra "+ word+ " es palindrome")
+  }else{
+    console.log("La palabra "+ word+ " no es palindrome")
+  }
 }
-console.log(palindromeVerifier(onVerificationWordA))
+palindromeVerifier(onVerificationWordA);
+palindromeVerifier(onVerificationWordB);
+palindromeVerifier(onVerificationWordC);
+palindromeVerifier(onVerificationWordD);
+
+
 
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
@@ -92,8 +100,9 @@ let containerTestObject = {
 }
 
 function lettersCounter(objectContainer) {
-    // :)
+    return objectContainer.replace(/[^aeiouAEIOU]/g, ''.length)
 }
+console.log(containerTestObject);
 
 
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
