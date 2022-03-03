@@ -20,15 +20,28 @@ la variación, es lo mismo Carro, CARRO o carro.*/
 let testTargetWordA = "Sabrosura";
 let testTargetWordB = "Sazón";
 let testTargetWordC = "Tempurado";
-let testWordsList = [
-    "Sabr0sura",
-    "Gozadera",
-    "ritmo",
-    "TEMPURADO",
-    "SAZON",
-    "Chevere",
-    "Meneo",
-];
+let listado = false;
+
+function buscador(indagar) {
+    let testWordsList = [
+        "Sabr0sura",
+        "Gozadera",
+        "ritmo",
+        "TEMPURADO",
+        "SAZON",
+        "Sazón",
+        "Chevere",
+        "Meneo",
+    ];
+    for (let i = 0; i < testWordsList.length; i++) {
+        esta = testWordsList[i];
+        if (testTargetWordB.toLowerCase() === esta.toLowerCase()) {
+            listado = true;
+        }
+        return listado;
+    }
+}
+console.log(listado);
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
@@ -66,9 +79,11 @@ let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
 function palindromeVerifier(word) {
-    // :)
+    const devolver = word.split("").reverse().join("");
+    console.log(devolver)
+    return devolver === word ? "Es palindromo" : "No es palindromo"
 }
-
+console.log(palindromeVerifier(onVerificationWordA))
 
 /*Dado un objeto que contiene una lista de palabras contar el
 número de letras vocales y consonantes y retornarlo en un arreglo de 2 posiciones.*/
